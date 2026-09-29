@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>天气主题预览</title><style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#0d0d0f;font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;color:#fff;padding:28px 32px 48px}
+  h1{font-size:20px;font-weight:600;margin:0 0 6px}
+  p.tip{font-size:13px;color:#ffffffa6;margin:0 0 26px}
+  .grid{display:flex;flex-wrap:wrap;gap:22px}
+  .wrap{width:210px}
+  .phone{height:300px;border-radius:22px;overflow:hidden;box-shadow:0 18px 40px -14px #000}
+  .inner{height:100%;padding:20px 16px 14px;display:flex;flex-direction:column;align-items:center;text-align:center}
+  .city{font-size:26px;font-weight:600;margin:6px 0 0}
+  .cond{font-size:13px;opacity:.8;margin:4px 0 0}
+  .temp{font-size:64px;font-weight:200;line-height:1;margin:auto 0 0}
+  .range{font-size:12px;opacity:.8;margin:10px 0 0}
+  .aqi{margin:auto 0 0;width:100%;display:flex;align-items:center;gap:6px;background:#ffffff26;border-radius:10px;padding:8px 10px;font-size:12px}
+  .aqi b{background:#34C759;border-radius:5px;padding:1px 5px;font-size:11px}
+  .aqi .adv{margin-left:auto;font-size:11px;opacity:.9;white-space:nowrap}
+  .dots{display:flex;gap:6px;margin:10px 0 0}
+  .dots i{width:5px;height:5px;border-radius:50%;background:#ffffff59}
+  .dots i.on{background:#fffffff2}
+  .name{font-size:13px;margin:10px 0 0;font-family:ui-monospace,Menlo,Consolas,monospace}
+  .name span{color:#ffffff8c;font-family:inherit;margin-left:6px}
+  .note{font-size:11px;color:#ffffff73;margin:3px 0 0;line-height:1.4}
+  .code{font-size:10px;color:#ffffff4d;margin:2px 0 0;font-family:ui-monospace,Menlo,Consolas,monospace}
+</style></head><body>
+  <h1>天气渐变主题预览</h1>
+  <p class="tip">未开启城市照片时，背景按「天气 + 昼夜」自动切换。下面用真实的字号和文案压制，用来判断白字够不够清楚。</p>
+  <div class="grid"><div class="wrap">
+    <div class="phone" style="background-image:linear-gradient(180deg, #4E9FE6 0%, #6FB8F0 100%)">
+      <div class="inner">
+        <p class="city">上海市</p>
+        <p class="cond">多云</p>
+        <p class="temp">24°</p>
+        <p class="range">最高 28° 最低 20°</p>
+        <div class="aqi"><span>AQI 45</span><b>优</b><span class="adv">适宜户外运动</span></div>
+        <div class="dots"><i class="on"></i><i></i><i></i></div>
+      </div>
+    </div>
+    <p class="name">day-clear<span>晴（白天）</span></p>
+    <p class="note">晴天白天（默认，与原设计稿一致）</p>
+    <p class="code">#4E9FE6 -> #6FB8F0</p>
+  </div><div class="wrap">
+    <div class="phone" style="background-image:linear-gradient(180deg, #4A90CF 0%, #6FA8D8 100%)">
+      <div class="inner">
+        <p class="city">上海市</p>
+        <p class="cond">多云</p>
+        <p class="temp">24°</p>
+        <p class="range">最高 28° 最低 20°</p>
+        <div class="aqi"><span>AQI 45</span><b>优</b><span class="adv">适宜户外运动</span></div>
+        <div class="dots"><i class="on"></i><i></i><i></i></div>
+      </div>
+    </div>
+    <p class="name">day-cloudy<span>多云（白天）</span></p>
+    <p class="note">多云白天：比晴天略灰，保留蓝感</p>
+    <p class="code">#4A90CF -> #6FA8D8</p>
+  </div><div class="wrap">
+    <div class="phone" style="background-image:linear-gradient(180deg, #5C6B7A 0%, #8C99A6 100%)">
+      <div class="inner">
+        <p class="city">上海市</p>
+        <p class="cond">多云</p>
+        <p class="temp">24°</p>
+        <p class="range">最高 28° 最低 20°</p>
+        <div class="aqi"><span>AQI 45</span><b>优</b><span class="adv">适宜户外运动</span></div>
+        <div class="dots"><i class="on"></i><i></i><i></i></div>
+      </div>
+    </div>
+    <p class="name">overcast<span>阴</span></p>
+    <p class="note">阴天：转灰</p>
+    <p class="code">#5C6B7A -> #8C99A6</p>
+  </div><div class="wrap">
+    <div class="phone" style="background-image:linear-gradient(180deg, #33445A 0%, #5A6E86 100%)">
+      <div class="inner">
+        <p class="city">上海市</p>
+        <p class="cond">多云</p>
+        <p class="temp">24°</p>
+        <p class="range">最高 28° 最低 20°</p>
+        <div class="aqi"><span>AQI 45</span><b>优</b><span class="adv">适宜户外运动</span></div>
+        <div class="dots"><i class="on"></i><i></i><i></i></div>
+      </div>
+    </div>
+    <p class="name">rain<span>雨</span></p>
+    <p class="note">雨天：深灰蓝</p>
+    <p class="code">#33445A -> #5A6E86</p>
+  </div><div class="wrap">
+    <div class="phone" style="background-image:linear-gradient(180deg, #242A3E 0%, #4A4F6B 100%)">
+      <div class="inner">
+        <p class="city">上海市</p>
+        <p class="cond">多云</p>
+        <p class="temp">24°</p>
+        <p class="range">最高 28° 最低 20°</p>
+        <div class="aqi"><span>AQI 45</span><b>优</b><span class="adv">适宜户外运动</span></div>
+        <div class="dots"><i class="on"></i><i></i><i></i></div>
+      </div>
+    </div>
+    <p class="name">thunder<span>雷阵雨</span></p>
+    <p class="note">雷阵雨：深紫灰</p>
+    <p class="code">#242A3E -> #4A4F6B</p>
+  </div><div class="wrap">
+    <div class="phone" style="background-image:linear-gradient(180deg, #54677D 0%, #93A7BC 100%)">
+      <div class="inner">
+        <p class="city">上海市</p>
+        <p class="cond">多云</p>
+        <p class="temp">24°</p>
+        <p class="range">最高 28° 最低 20°</p>
+        <div class="aqi"><span>AQI 45</span><b>优</b><span class="adv">适宜户外运动</span></div>
+        <div class="dots"><i class="on"></i><i></i><i></i></div>
+      </div>
+    </div>
+    <p class="name">snow<span>雪</span></p>
+    <p class="note">雪：冷灰白，仍保证白字可读</p>
+    <p class="code">#54677D -> #93A7BC</p>
+  </div><div class="wrap">
+    <div class="phone" style="background-image:linear-gradient(180deg, #616C78 0%, #98A3AE 100%)">
+      <div class="inner">
+        <p class="city">上海市</p>
+        <p class="cond">多云</p>
+        <p class="temp">24°</p>
+        <p class="range">最高 28° 最低 20°</p>
+        <div class="aqi"><span>AQI 45</span><b>优</b><span class="adv">适宜户外运动</span></div>
+        <div class="dots"><i class="on"></i><i></i><i></i></div>
+      </div>
+    </div>
+    <p class="name">fog<span>雾</span></p>
+    <p class="note">雾：中性灰</p>
+    <p class="code">#616C78 -> #98A3AE</p>
+  </div><div class="wrap">
+    <div class="phone" style="background-image:linear-gradient(180deg, #D96A4A 0%, #7A5CA8 100%)">
+      <div class="inner">
+        <p class="city">上海市</p>
+        <p class="cond">多云</p>
+        <p class="temp">24°</p>
+        <p class="range">最高 28° 最低 20°</p>
+        <div class="aqi"><span>AQI 45</span><b>优</b><span class="adv">适宜户外运动</span></div>
+        <div class="dots"><i class="on"></i><i></i><i></i></div>
+      </div>
+    </div>
+    <p class="name">golden<span>日出日落</span></p>
+    <p class="note">日出日落前后 40 分钟</p>
+    <p class="code">#D96A4A -> #7A5CA8</p>
+  </div><div class="wrap">
+    <div class="phone" style="background-image:linear-gradient(180deg, #0A1730 0%, #1E3A63 100%)">
+      <div class="inner">
+        <p class="city">上海市</p>
+        <p class="cond">多云</p>
+        <p class="temp">24°</p>
+        <p class="range">最高 28° 最低 20°</p>
+        <div class="aqi"><span>AQI 45</span><b>优</b><span class="adv">适宜户外运动</span></div>
+        <div class="dots"><i class="on"></i><i></i><i></i></div>
+      </div>
+    </div>
+    <p class="name">night-clear<span>晴（夜间）</span></p>
+    <p class="note">晴夜</p>
+    <p class="code">#0A1730 -> #1E3A63</p>
+  </div><div class="wrap">
+    <div class="phone" style="background-image:linear-gradient(180deg, #152238 0%, #2C4260 100%)">
+      <div class="inner">
+        <p class="city">上海市</p>
+        <p class="cond">多云</p>
+        <p class="temp">24°</p>
+        <p class="range">最高 28° 最低 20°</p>
+        <div class="aqi"><span>AQI 45</span><b>优</b><span class="adv">适宜户外运动</span></div>
+        <div class="dots"><i class="on"></i><i></i><i></i></div>
+      </div>
+    </div>
+    <p class="name">night-cloudy<span>多云（夜间）</span></p>
+    <p class="note">多云夜</p>
+    <p class="code">#152238 -> #2C4260</p>
+  </div></div>
+</body></html>

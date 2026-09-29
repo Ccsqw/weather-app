@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', Arial, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  overscroll-behavior: none;
+}
+
+/* 天气主题切换时淡入，避免颜色硬切 */
+@keyframes themeFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* 切换城市的入场动画：淡入 + 轻微上浮 */
+@keyframes contentIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.992);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* 系统开了「减少动态效果」就全部关掉 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@layer utilities {
+  /* 隐藏滚动条但保留滚动能力 */
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* backdrop-filter 不支持时降级为更实的底色 */
+@supports not (backdrop-filter: blur(1px)) {
+  .card-fallback {
+    background-color: rgb(255 255 255 / 0.22);
+  }
+}
+/* 切换城市时内容的入场动画（写死在 CSS 里，避免 Tailwind 任意值解析问题） */
+.content-enter {
+  animation: contentIn 460ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
